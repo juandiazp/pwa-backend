@@ -7,8 +7,75 @@
 - Git
 
 ## 📦 Instalación local
-```bash
-git clone <repo-url>
-cd backend
+
+1. Clonar el repositorio y entrar en la carpeta:
+git clone https://github.com/juandiazp/pwa-backend.git
+cd PWA-Backend
+
+2. Instalar dependencias:
 npm install
+
+3. Crear archivo `.env` basado en `.env.example` y rellenar con los datos de PostgreSQL:
+PORT=3000
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=jdiaz
+DB_PASSWORD=linux
+DB_NAME=appback_db
+
+4. Levantar la aplicación en modo desarrollo:
 npm run start:dev
+
+5. Probar Swagger en el navegador:
+http://localhost:3000/api
+
+## 🔑 Endpoint de prueba (Login)
+
+POST /auth/login
+
+Body de ejemplo:
+{
+  "username": "admin",
+  "password": "1234"
+}
+
+Respuesta esperada:
+{
+  "access_token": "fake-jwt-token",
+  "user": { "username": "admin" }
+}
+
+## 🐳 Levantar con Docker (opcional)
+
+docker-compose up --build
+
+- Backend disponible en http://localhost:3000
+- PostgreSQL disponible en el puerto 5432
+
+## 🛠 Comandos útiles de NestJS
+
+Generar módulo: nest g mo <nombre>
+Generar controlador: nest g co <nombre>
+Generar servicio: nest g s <nombre>
+Generar guard: nest g gu <nombre>
+Generar middleware: nest g mi <nombre>
+Generar interceptor: nest g in <nombre>
+Generar pipe: nest g pi <nombre>
+
+## ⚙️ Configuración recomendada de VS Code
+
+Agregar en `settings.json`:
+"files.eol": "\n",
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": { "source.fixAll.eslint": true }
+
+Normalizar archivos existentes:
+npx prettier --write .
+
+## 🌳 Flujo Git recomendado
+
+- main: código estable
+- develop: integración de features
+- feature/*: nuevas funcionalidades
+
+Cada PR debe apuntar a develop y ser revisado antes de mergear a main.
