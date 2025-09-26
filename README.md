@@ -57,6 +57,11 @@ Respuesta esperada:
   "user": { "username": "admin" }
 }
 
+# Opcional (si vas a generar nuevos módulos/controladores)
+```bash
+npm i -g @nestjs/cli
+```
+
 ## 🐳 Levantar con Docker (opcional)
 ```
 docker-compose up --build
