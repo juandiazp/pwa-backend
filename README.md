@@ -97,7 +97,7 @@ npx prettier --write .
 
 ## 🌳 Flujo Git recomendado
 
-- main: código estable
+- master: código estable
 - develop: integración de features
 - feature/*: nuevas funcionalidades
 
